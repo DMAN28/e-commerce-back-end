@@ -1,12 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
-
+//
 const sequelize = require('../config/connection.js');
 
 class Category extends Model {}
 
 Category.init(
   {
-    // define columns
+    //TODO Category model is created with two properties: id and category name.
   },
   {
     sequelize,

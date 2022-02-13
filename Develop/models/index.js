@@ -4,13 +4,13 @@ const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
 
-// Products belongsTo Category
+//TODO Products belongsTo Category module is the Product model, which has a belongsToMany relationship with Tag and a belongsTo Category relationship.
 
-// Categories have many Products
+//TODO Categories have many Products module is the Category model, which has many relationships to Products through its foreignKey property of category_id .
 
-// Products belongToMany Tags (through ProductTag)
+//TODO Products belongToMany Tags (through ProductTag)third module is the Tag model, which has many relationships to Products through its as property of tags and its foreignKey property of product_id 
 
-// Tags belongToMany Products (through ProductTag)
+//TODO Tags belongToMany Products (through ProductTag)
 
 module.exports = {
   Product,
