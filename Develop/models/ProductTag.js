@@ -6,7 +6,17 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
-    //TODO define columns defines the following: - id - an integer primary key, auto-incrementing, and not nullable. - product_id - an integer primary key with references to product and tag models. - tag_id - an integer primary key with references to tag model. 
+    //TODO define columns defines the following: - id - an integer primary key, auto-incrementing, and not nullable. - product_id - an integer primary key with references to product and tag models. - tag_id - an integer primary key with references to tag model.  
+      id :{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    tag_id:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
