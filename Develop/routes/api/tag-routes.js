@@ -51,10 +51,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new tag in the database and returns to client
-  Tag.create({
-    Tag_name: req.body.Tag_name,
-  
-  })
+  Tag.create(req.body)
     .then(dbNewTag => res.json(dbNewTag))
     .catch(err => {
       console.log(err);
@@ -64,7 +61,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-  Category.update(
+  Tag.update(
     {Tag_name: req.body.Tag_name,},
      {
     where: {
@@ -91,12 +88,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbDeleteData => {
-      if (!dbDeleteData) {
+    .then(dbDeleteTag => {
+      if (!dbDeleteTag) {
         res.status(404).json({ message: 'No Tag found' });
         return;
       }
-      res.json(dbDeleteData);
+      res.json(dbDeleteTag);
     })
     .catch(err => {
       console.log(err);
